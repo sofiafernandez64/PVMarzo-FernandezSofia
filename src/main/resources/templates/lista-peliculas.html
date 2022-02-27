@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Listado de Peliculas</title>
+</head>
+
+<link th:rel="stylesheet" type="text/css" th:href="@{/css/miestilo.css}">
+<link th:rel="stylesheet" type="text/css"
+    th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!-- link hacia el boostrap -->
+<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "> <!-- va a buscar el archivo de font-awesome y lo trae -->
+
+
+<body>
+<div th:insert="layout/header :: header"></div> 
+
+
+<!-- lista de peliculas cuadro -->
+
+
+ <h3>Lista de Peliculas</h3><br>
+ 
+     <div>
+     <table >
+     <tr>
+            <th>Codigo Pelicula</th>
+            <th>Nombre de Pelicula</th> <!-- headers, encabezados de la tabla -->
+            <th>Descripcion</th>
+            <th>Imagen</th>
+            <th>Duracion</th>
+            <th>Actor</th>
+            <th>Director</th>
+      
+     
+     </tr>
+      
+     <tr th:if="${peliculas.empty}"> <!-- los tr son para escribir en las filas -->
+           <td colspan="2">No hay peliculas en el listado </td>
+      </tr>
+     
+       <!--    {peliculas} esta viniendo de la capa controller --> 
+     <tr th:each="p : ${peliculas}"> <!-- fila nueva, por cada iteracion nosotros vamos a mostrar codigo de producto, nombre, marca stock -->
+                       <td th:text="${p.codPelicula}"></td>
+                        <td th:text="${p.nombrePelicula}"></td>
+                        <td th:text="${p.descripcion}"></td>
+                        <td th:text="${p.imagen}"></td>
+                        <td th:text="${p.duracion}"></td>
+                        <td th:text="${p.duracion}"></td>
+                        <td th:text="${p.actor}"></td>
+                       <td th:text="${p.director}"></td>
+                        
+                        
+                     <!--    
+                       
+             <td><a th:href="@{'/producto/editar/'+${p.codProducto}}">
+                        <i class="far fa-edit fa"></i></a>
+                        
+                    <a th:onclick="'javascript:confirmarEliminar(\''+${p.codProducto}+'\');'"> 
+                    <i class="fa fa-trash-alt"></i></a> -->
+                   
+
+                        </td>
+       </tr>
+     </table>
+     </div>
+    
+     
+      <!--Modal Eliminar-->
+	<!--	<div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="eliminarModal" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="eliminarModalTitulo">Confirmar Eliminar</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<!-- boton borrar -->
+					<!-- 		<span aria-hidden="true">&times;</span>
+						</button> 
+					</div>
+					<div class="modal-body">
+						<h6>Are you sure you want to delete this user?</h6>
+					</div>
+					<input type="hidden" id="identificadorProducto" name="userHiddenInput" /> 
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+						<!-- cada vez que hagamos click th:onclick va a ir al script eliminarUsuario-->
+						<!-- <button type="button" class="btn btn-primary" th:onclick="eliminarProducto()">Delete User</button> -->
+						<!-- boton confirmar eliminar -->
+				<!--  	</div>
+				</div>
+			</div>
+		</div>
+
+	</div>-->
+    
+   <!--  <script type="text/javascript">
+				function confirmarEliminar(codProducto){  --><!--  viene como parametro el id-->
+				<!--  	$('#modalEliminar').modal('show');
+					$("#identificadorProducto").val(codProducto); <!--al id lo pongo en una variable que se llama #identificadorUsuarioHiddenInput-->
+				<!--  }
+				
+				function eliminarProducto(){
+					var codProducto = $("#identificadorProducto").val();
+				    window.location = "eliminarProducto/"+codProducto;
+				}
+
+</script>-->
+
+
+
+
+  
+     <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
+		type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
+		type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
+		type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	
+
+</body>
+</html>
