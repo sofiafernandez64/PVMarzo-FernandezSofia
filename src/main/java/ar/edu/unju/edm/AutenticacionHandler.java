@@ -19,6 +19,7 @@ public class AutenticacionHandler implements AuthenticationSuccessHandler{
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
 
+	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
