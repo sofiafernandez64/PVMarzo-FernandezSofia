@@ -25,6 +25,9 @@ public class PeliculaController {
 		//model.addAttribute("unaPelicula", peliculaService.crearPelicula());
 		model.addAttribute("peliculas",  peliculaService.obtenerTodasPeliculas());
 		return("lista-peliculas");
+		
+		
+		
 
 }
 	}

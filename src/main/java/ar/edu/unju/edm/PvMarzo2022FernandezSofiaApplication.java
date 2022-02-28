@@ -1,5 +1,7 @@
 package ar.edu.unju.edm;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import ar.edu.unju.edm.model.Pelicula;
+import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.service.IPeliculaService;
+import ar.edu.unju.edm.service.IUsuarioService;
 
 @SpringBootApplication
 public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
@@ -18,6 +22,12 @@ public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
 	
 	@Autowired
 	IPeliculaService peliculaService;
+	
+	@Autowired
+	Usuario usuario;
+	
+	@Autowired 
+	IUsuarioService usuarioService;
 	
 	public static void main(String[] args){
 		SpringApplication.run(PvMarzo2022FernandezSofiaApplication.class, args);
@@ -61,6 +71,40 @@ public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
 		peli3.setIdPelicula(3);
 		peli3.setImagen("img3");
 		peliculaService.guardarPelicula(peli3);
+		
+		
+		Usuario usuAdmi = new Usuario();
+		usuAdmi.setApellido("Torres");
+		usuAdmi.setNombre("Franco");
+		usuAdmi.setDni(44789644);
+		usuAdmi.setFechaNacimiento(LocalDate.now());
+		usuAdmi.setIdUsuario(4);
+		usuAdmi.setPassword("hola");
+		usuAdmi.setTipoUsuario("Admin");
+		usuarioService.guardarUsuario(usuAdmi);
+		
+		
+		Usuario cliente = new Usuario();
+		cliente.setApellido("Lopez");
+		cliente.setNombre("Candela");
+		cliente.setDni(23478769);
+		cliente.setFechaNacimiento(LocalDate.of(1999, 10, 12)); //localDate: anio, mes y dia
+		cliente.setIdUsuario(3);
+		cliente.setPassword("contra");
+		cliente.setTipoUsuario("Cliente");
+		usuarioService.guardarUsuario(cliente);
+
+		
+		Usuario cliente2 = new Usuario();
+		cliente2.setApellido("Carrizo");
+		cliente2.setNombre("Tomas");
+		cliente2.setDni(17234789);
+		cliente2.setFechaNacimiento(LocalDate.of(1959, 8, 13));
+		cliente2.setIdUsuario(4);
+		cliente2.setPassword("tom");
+		cliente2.setTipoUsuario("Cliente");
+		usuarioService.guardarUsuario(cliente2);
+
 		
 	}
 	

@@ -1,0 +1,74 @@
+
+
+table{
+/*estilo de el cuerpo de nuestra tabla*/
+/*background-color: #1e8cbe; */
+border-collapse: separate;
+width:75%;
+margin:24px auto;
+border: 1px solid #005F73;
+font-weight:normal;
+text-align:center;
+font-family: 'calibri'
+
+
+}
+
+
+
+/*
+table tr:nth-child(odd) {
+	para los colores de las filas pares*/
+	/*background-color: #94D2BD;
+	/*background:  colo blanquito bonito
+}
+
+table tr:nth-child(even) {
+	para los colores de las filas impares
+	background-color: #0A9396;
+}
+
+*/
+
+
+
+
+/*
+table {    
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;    
+    margin: 45px;     
+    width: 450%; 
+    text-align: left;   
+    border-collapse: collapse;
+    
+    
+
+     }
+*/
+
+th
+ { 
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px; 
+    background: #b9c9fe; 
+    border-top: 4px solid #aabcfe;  
+    border-bottom: 1px solid #fff; 
+    color: #039; 
+    }
+
+td {   
+	padding: 8px;   
+    background: #e8edff;  
+    border-bottom: 1px solid #fff;
+    color: #669; 
+    border-top: 1px solid transparent; 
+    }
+
+tr:hover td { 
+	background: #d0dafd; 
+	color: #339; 
+	
+	
+	 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--  <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <link th:rel="icon" type=" image/png" th:href="@{/img/logo.png}" />
@@ -15,7 +15,7 @@
 	<form th:action="@{/login}"	method="post">
        <div class="col-lg-12 col-md-10 col-sm-12 col-xs-12">
            
-              <input type="correo" name="correo" class="form-control" id="exampleInputEmail1"  placeholder="Ingrese su Email">
+              <input type="dni" name="dni" class="form-control" id="exampleInputEmail1"  placeholder="Ingrese su dni">
         </div>
        <div class="col-lg-12  col-md-10 col-sm-12 col-xs-12">
          
@@ -37,4 +37,54 @@
 			type="text/javascript"
 			src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>	
 </body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8">
+	<title>Inicia Sesion</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	  <link th:rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+	
+</head>
+<body>
+
+
+	<div class="contact-form">
+		<img alt="" class="avatar" src="https://i.postimg.cc/zDyt7KCv/a1.jpg">
+		<h2>Contact Form</h2>
+	
+	<form th:action="@{/login}"	method="post">
+			<p>Dni</p><input type="number" name="dni" class="form-control" id="exampleInputEmail1" placeholder="Ingrese su dni">
+			<p>Password</p><input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su contraseña" > 
+			
+			<!--  <input type="submit" value="Sign in">-->
+			
+			<br>
+			<input type="submit" class="agregar" value="Ingresar">
+			
+			
+			<br>
+			<div class="signup">No tienes una cuenta?
+          <a href="/turista/mostrar">Registrate</a>
+        </div>
+		</form>
+	</div>
+
+
+
+</body>
+
+
+	 <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
+		type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
+		type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
+		type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </html>
