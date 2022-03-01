@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
@@ -24,8 +25,10 @@ public class Usuario {
 	@Id
 	@Column
 	private Integer dni;
+	@NotBlank(message="Debe ingresar un apellido")
 	@Column
 	private String apellido;
+	@NotBlank(message="Debe ingresar un nombre")
 	@Column
 	private String nombre;
 	@Column

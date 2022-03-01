@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Lista de Usuarios</title>
+</head>
+
+
+<link th:rel="stylesheet" type="text/css" th:href="@{/css/misestilos.css}">
+
+<link th:rel="stylesheet" type="text/css"
+    th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!-- link hacia el boostrap -->
+<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "> <!-- va a buscar el archivo de font-awesome y lo trae -->
+
+<body>
+
+<div class="container sofia">
+
+ 
+   <!-- si el editMode esta en verdadero, lo que hago es modificar, pero si esta en falso lo que hago es guardar-->
+     <form id="formProducto" th:object="${unUsuario}" th:action="${editMode}?@{/usuario/modificar}:@{/usuario/guardar}" method="post" enctype="multipart/form-data">
+    
+     <div class="form-group row"> <!-- esto es una caja -->
+    <label for="dni" class="col-sm-2 col-form-label">Documento</label><div class="col-sm-10">
+    <input type="number"   id="dni" th:field="*{dni}" class="form-control">
+  </div>
+  </div>
+  
+  
+    <div class="form-group row">
+    <label for="fechanac" class="col-sm-2 col-form-label">Nacimiento</label><div class="col-sm-10">
+    <input type="date" id="fechanac" th:field="*{fechaNacimiento}" class="form-control" > 
+ </div>
+ </div>
+ 
+    
+
+    
+    <div class="form-group row">
+    <label for="nombre" class="col-sm-2 col-form-label">Nombre</label><div class="col-sm-10">
+    <input type="text" id="nombre" th:field="*{nombre}" class="form-control"> 
+    					<div class="alert alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombreApellido}">Name	Error</div>
+    
+    </div>
+    </div>
+    
+                       <input type="hidden" th:field="*{password}">
+    
+    
+    <div class="form-group row">
+    <label for="apellido" class="col-sm-2 col-form-label">Apellido</label><div class="col-sm-10">
+    <input type="text" id="apellido" th:field="*{apellido}" class="form-control"> 
+    					<div class="alert alert-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{nombreApellido}">Name	Error</div>
+    
+    </div>
+    </div>
+ 
+      <div class="form-group row">
+       <label for="tipo" class="col-sm-2 col-form-label" >Tipo Usuario</label><div class="col-sm-10">
+         <select id="tipo" th:field="*{tipoUsuario}" class="form-control">
+          <option value= "Admin">Admin</option>
+           <option value= "Cliente">Cliente</option>
+         </select>
+     </div>
+    </div>
+ 
+   
+   
+    
+ 
+    <br>
+    <br>
+    
+    
+        <div class="row">
+            <div class="col-xs-6 col-md-6"><input type="submit" value="Modificar Usuario" class="btn btn-success btn-block btn-lg" tabindex="7"
+                title="Modificar cliente"></div>
+
+            <div class="col-xs-6 col-md-6"><input type="submit" value="Cancelar" class="btn btn-secondary btn-block btn-lg" tabindex="8">
+            </div>
+        </div>
+    
+    
+   </div>
+    </form>
+	
+	
+	
+	
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
+			type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+		<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
+			type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+		<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
+			type="text/javascript"
+			src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>	
+	</body>
+	</html>

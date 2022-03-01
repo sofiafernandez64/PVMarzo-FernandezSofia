@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.stereotype.Component;
 
@@ -15,13 +16,14 @@ import org.springframework.stereotype.Component;
 public class Pelicula {
 	
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer idPelicula;
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer codPelicula;
+	@NotBlank(message="Es obligatorio introducir un nombre de pelicula")
 	@Column
 	private String nombrePelicula;
 	@Column
@@ -30,8 +32,10 @@ public class Pelicula {
 	private String imagen;
 	@Column
 	private double duracion;
+	@NotBlank(message="Debe ingresar un nombre de actor")
 	@Column
 	private String actor;
+	@NotBlank(message="Debe ingresar el nombre del director")
 	@Column
 	private String director;
 	

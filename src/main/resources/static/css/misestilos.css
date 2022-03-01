@@ -1,10 +1,18 @@
 
+body{
+	background-image: url("https://img.freepik.com/vector-gratis/textura-papel-blanco-hecho-mano_125540-947.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
 
 table{
 /*estilo de el cuerpo de nuestra tabla*/
 /*background-color: #1e8cbe; */
 border-collapse: separate;
-width:75%;
+width:74%;
+height:280px;
 margin:24px auto;
 border: 1px solid #005F73;
 font-weight:normal;
@@ -49,7 +57,7 @@ table {
 
 th
  { 
-    font-size: 13px;
+    font-size: 18px;
     font-weight: normal;
     padding: 8px; 
     background: #b9c9fe; 
@@ -59,6 +67,7 @@ th
     }
 
 td {   
+	font-size: 16px;
 	padding: 8px;   
     background: #e8edff;  
     border-bottom: 1px solid #fff;
@@ -72,3 +81,40 @@ tr:hover td {
 	
 	
 	 }
+	 
+	 .img-fluid{
+	 margin-top:70px; /*ponemos a la imagen mas abajo*/
+	 }
+	 
+	 
+.jumbotron-fluid{
+		background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-film-scene-film-background-image_190374.jpg");
+	/*background-position: center center;
+	
+	background-attachment: fixed;
+	*/
+	background-repeat: no-repeat;background-size: cover;
+	
+}
+.display-4{
+	color:light-blue;
+}
+
+.titulousu{
+	color: #FCA205;
+     font-family: 'Lobster', cursive;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+    text-align:center;
+    
+}
+
+.sofia{
+	margin-top:70px;
+	
+}
+
+.header{
+		color: #FCA205;
+	
+}
