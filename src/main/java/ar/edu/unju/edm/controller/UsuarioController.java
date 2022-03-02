@@ -48,7 +48,14 @@ public class UsuarioController {
 		return "lista-usuarios";
 	}
 	
-
+//aqui estoy creando un usuario
+	@GetMapping("/usuario/crear")
+	public String cargarTurista(Model model) {
+		model.addAttribute("unUsuario", usuarioService.crearUsuario());
+		
+	return("registro-usuario");
+	}
+	
 	
 	
 	@GetMapping("/usuario/editar/{dni}")
@@ -69,14 +76,15 @@ public class UsuarioController {
 		return("usuarioedito"); //ñista-usuarios
 	}
 
+	/*
 	@PostMapping("/usuario/guardar")
-	public String guardarNuevoProducto(@Valid @ModelAttribute("unUsuario") Usuario nuevoUsuario,BindingResult resultado, Model model) {
+	public String guardarNuevoUsuario(@Valid @ModelAttribute("unUsuario") Usuario nuevoUsuario,BindingResult resultado, Model model) {
 		LOGGER.info("METHOD: ingresando a Guardar");
 	if (resultado.hasErrors())
 	{
 		model.addAttribute("unUsuario",nuevoUsuario);
 		model.addAttribute("usuarios", usuarioService.obtenerTodosUsuarios());
-	return ("lista-usuarios");
+	return ("registro-usuario");
 	}
 	else {
 	//deberia haber try
@@ -85,6 +93,42 @@ public class UsuarioController {
 		return "redirect:/usuario/mostrar";
 	}
 	
+	}*/
+	
+	/*
+	
+	@PostMapping("/usuario/guardar")
+	public String guardarNuevoTurista(@Valid @ModelAttribute("unUsuario") Usuario nuevoUsuario, BindingResult resultado ,Model model) {
+		
+		if (resultado.hasErrors()) 
+		{
+			LOGGER.info("METHOD: Esto va a dar un error");
+			model.addAttribute("unUsuario", nuevoUsuario);
+			model.addAttribute("usuarios", usuarioService.obtenerTodosUsuarios());
+			return("registro-usuario");
+		}
+		else 
+		{
+			LOGGER.info("METHOD: ingresando el metodo Guardar");
+			try {
+				usuarioService.guardarUsuario(nuevoUsuario);
+				return "redirect:/home";
+			}
+			catch (Exception e){
+				LOGGER.info("METHOD: Esto va a dar un error");
+				model.addAttribute("unUsuario", nuevoUsuario);
+				return("error");
+
+			}
+		}
+	}*/
+	
+
+	@PostMapping("/usuario/guardar")
+	public String guardarNuevoTurista(@ModelAttribute("unUsuario") Usuario nuevoUsuario, Model model) {
+	  usuarioService.guardarUsuario(nuevoUsuario);
+		//model.addAttribute("turistas", turistaService.obtenerTodosTuristas());
+		return "redirect:/home";
 	}
 	
 	

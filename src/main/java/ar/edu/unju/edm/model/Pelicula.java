@@ -16,11 +16,11 @@ import org.springframework.stereotype.Component;
 public class Pelicula {
 	
 	
-	@Column
+	@Column	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Integer idPelicula;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer codPelicula;
 	@NotBlank(message="Es obligatorio introducir un nombre de pelicula")

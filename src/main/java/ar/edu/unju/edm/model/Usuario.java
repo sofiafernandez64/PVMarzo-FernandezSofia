@@ -18,8 +18,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Usuario {
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	@Column
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idUsuario;
 	
 	@Id

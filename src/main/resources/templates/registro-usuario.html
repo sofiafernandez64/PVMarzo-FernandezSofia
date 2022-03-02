@@ -1,0 +1,123 @@
+<!--  <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+<meta charset="UTF-8">
+<title>Lista de Usuarios</title>
+</head>
+
+
+
+<link th:rel="stylesheet" type="text/css"
+    th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!--link hacia el boostrap 
+   <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} ">    va a buscar el archivo de font-awesome y lo trae 
+
+  
+
+
+ <form id="formUsuarioRegistro" th:object="${unUsuario}" th:action="@{/usuario/guardar}" method="post"> 
+ 
+ 
+ 
+<h1>Registrate</h1>
+<hr>
+
+
+<div class="container">
+<form role="form">
+    <div class="well">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" th:field="*{nombre}" class="form-control" placeholder="Nombre" tabindex="1">
+               	<div class="alert alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Name	Error</div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido" th:filed="*{apellido}" class="form-control" placeholder="Ingrse su apellido" tabindex="2">
+                               	<div class="alert alert-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Name	Error</div>
+                
+                </div>
+            </div>
+        </div>
+
+      
+
+  
+
+        <div class="form-group">
+            <label for="email">dni:</label>
+            <input type="number" name="" id="dni" th:field=*{dni} class="form-control" placeholder="dni" tabindex="6">
+        
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="fechaNacimiento">Fecha Nacimiento:</label>
+            <input type="date" name="" id="fechaNacimiento" th:field=*{fechaNacimiento} class="form-control" placeholder="dni" tabindex="6">
+        
+        </div>
+       
+
+
+
+
+        <div class="form-group">
+            <label for="email">Contrasenia: </label>
+            <input type="password" name="" id="password" th:field=*{password} class="form-control" placeholder="Ingrese su contrasenia" tabindex="6">
+                                       	<div class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Name	Error</div>
+        
+        </div>
+
+
+         <div class="form-group">
+                    <label for="tipoUsuarrio" class="form-label">Tipo Usuario</label>
+                    <select class="form-control" name="tipoUsuario" id="tipoUsuario" th:field="*{tipoUsuario}">
+                    <option value="-- Seleccione su usuario --" selected disabled>-- Seleccione su usuario --</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Cliente">Cliente</option>
+                    
+                </select>
+                </div>
+        
+        
+          <div class="row">
+            <div class="col-xs-6 col-md-6"><input type="submit" value="Guardar" class="btn btn-danger btn-block btn-lg" tabindex="7"
+                title="Guardar datos ingresados"></div>
+
+            <div class="col-xs-6 col-md-6"><input type="submit" value="Cancelar" class="btn btn-block btn-lg" tabindex="8">
+            </div>
+        </div>
+  
+        <div>
+             <button type="submit" class="btn btn-primary">Agregar</button>  <!-- si es de tipo submit va al action y ejecuta 
+             
+    </div>
+   
+    
+</form>
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+ </form>-->
+ 
+
+
+
+
+
+
+</body>
+</html> 
