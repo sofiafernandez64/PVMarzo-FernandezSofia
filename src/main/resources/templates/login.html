@@ -23,14 +23,26 @@
 			
 			<br>
 			<input type="submit" class="agregar" value="Ingresar">
-			
+			<div class="alert-danger text-center"
+				th:if="${formLoginErrorMessage}" th:text="${formLoginErrorMessage}">Name
+				Error</div>
 			
 			<br>
 			<div class="signup">No tienes una cuenta?
           <a href="/usuario/crear">Registrate</a>
         </div>
 		</form>
+		
+		<br>
+		<br>
+		
+		<div th:if="${param.error}" class="alert alert-danger" role="alert">
+			Combinación Invalida de Usuario y Contraseña</div>
+		<div th:if="${param.logout}" class="alert alert-success" role="alert">
+			Ha salido del Sistema. Gracias!</div>
+		
 	</div>
+		
 
 
 

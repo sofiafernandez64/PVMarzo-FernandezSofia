@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import ar.edu.unju.edm.model.Pelicula;
 import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.repository.IUsuarioDAO;
 import ar.edu.unju.edm.service.IUsuarioService;

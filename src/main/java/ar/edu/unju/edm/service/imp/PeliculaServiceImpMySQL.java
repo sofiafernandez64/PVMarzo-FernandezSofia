@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.edm.model.Pelicula;
-import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.repository.IPeliculaDAO;
 import ar.edu.unju.edm.service.IPeliculaService;
 
@@ -25,11 +24,13 @@ public class PeliculaServiceImpMySQL implements IPeliculaService{
 		peliculaDAO.save(unaPelicula);
 		
 	}
-
+	
+	
 	@Override
 	public Pelicula obtenerPeliculaCodigo(Integer codPelicula) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return peliculaDAO.findById(codPelicula).orElseThrow();
 	}
 
 	@Override
@@ -56,23 +57,15 @@ public class PeliculaServiceImpMySQL implements IPeliculaService{
 		hacia.setDescripcion(desde.getDescripcion());
 		hacia.setDirector(desde.getDirector());
 		hacia.setDuracion(desde.getDuracion());
-		hacia.setIdPelicula(desde.getIdPelicula());
 		hacia.setImagen(desde.getImagen());
 		hacia.setNombrePelicula(desde.getNombrePelicula());
 		
    
 }
-	@Override
-	public void eliminarPelicula(Integer codPelicula) throws Exception {
-		// TODO Auto-generated method stub
-		Pelicula peliculaAEliminar = peliculaDAO.findByCodPelicula(codPelicula).orElseThrow();
 
-		peliculaDAO.delete(peliculaAEliminar);
-		
-	}
 
 	@Override
-	public Pelicula obtenerPelicula(String nombreProducto) {
+	public Pelicula obtenerPelicula(String nombrePelicula) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -96,6 +89,12 @@ public class PeliculaServiceImpMySQL implements IPeliculaService{
 		return peliculaDAO.findById(codPelicula).orElseThrow(()->new Exception("la pelicula no existe"));
 
 	}
+
+
+
+	
+		
+	
 	
 
 }

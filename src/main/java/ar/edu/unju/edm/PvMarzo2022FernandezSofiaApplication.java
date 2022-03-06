@@ -44,7 +44,6 @@ public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
 		peli.setDescripcion("Licorice Pizza” es la historia de Alana Kane y Gary Valentine, la vida de dos jóvenes que se enamoran en el Valle de San Fernando en 1973.");
 		peli.setDirector("Paul Thomas Anderson");
 		peli.setDuracion(3);
-		peli.setIdPelicula(1);
 		peli.setImagen("img");
 		peliculaService.guardarPelicula(peli);
 		
@@ -56,7 +55,6 @@ public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
 		peli2.setDescripcion("Un buscavidas (Bradley Cooper) se compincha con una pitonisa (Cate Blanchett) para estafar a millonarios...");
 		peli2.setDirector("Guillermo del Toro");
 		peli2.setDuracion(98);
-		peli2.setIdPelicula(2);
 		peli2.setImagen("img2");
 		peliculaService.guardarPelicula(peli2);
 		
@@ -68,7 +66,6 @@ public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
 		peli3.setDescripcion("Una estrella del pop es abandonada por su prometido, una estrella del rock, momentos antes de su boda en el Madison Square Garden");
 		peli3.setDirector("Kat Coiro");
 		peli3.setDuracion(67);
-		peli3.setIdPelicula(3);
 		peli3.setImagen("img3");
 		peliculaService.guardarPelicula(peli3);
 		
@@ -78,7 +75,6 @@ public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
 		usuAdmi.setNombre("Franco");
 		usuAdmi.setDni(44789644);
 		usuAdmi.setFechaNacimiento(LocalDate.now());
-		usuAdmi.setIdUsuario(4);
 		usuAdmi.setPassword("hola");
 		usuAdmi.setTipoUsuario("Admin");
 		usuarioService.guardarUsuario(usuAdmi);
@@ -89,7 +85,6 @@ public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
 		cliente.setNombre("Candela");
 		cliente.setDni(23478769);
 		cliente.setFechaNacimiento(LocalDate.of(1999, 10, 12)); //localDate: anio, mes y dia
-		cliente.setIdUsuario(3);
 		cliente.setPassword("contra");
 		cliente.setTipoUsuario("Cliente");
 		usuarioService.guardarUsuario(cliente);
@@ -100,7 +95,6 @@ public class PvMarzo2022FernandezSofiaApplication implements CommandLineRunner{
 		cliente2.setNombre("Tomas");
 		cliente2.setDni(17234789);
 		cliente2.setFechaNacimiento(LocalDate.of(1959, 8, 13));
-		cliente2.setIdUsuario(4);
 		cliente2.setPassword("tom");
 		cliente2.setTipoUsuario("Cliente");
 		usuarioService.guardarUsuario(cliente2);

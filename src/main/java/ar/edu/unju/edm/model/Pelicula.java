@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -16,9 +17,6 @@ import org.springframework.stereotype.Component;
 public class Pelicula {
 	
 	
-	@Column	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-	private Integer idPelicula;
 	
 	@Id
 	@Column
@@ -28,7 +26,8 @@ public class Pelicula {
 	private String nombrePelicula;
 	@Column
 	private String descripcion;
-	@Column
+	@Lob
+	@Column(name = "prod_imagen", columnDefinition = "LONGBLOB")
 	private String imagen;
 	@Column
 	private double duracion;
@@ -39,15 +38,25 @@ public class Pelicula {
 	@Column
 	private String director;
 	
+	//@OneToMany(cascade= CascadeType.ALL)
+	//List<VentaTicket>ventas; //si la consulta viene por pelicula
+	
 	public Pelicula() {
 		// TODO Auto-generated constructor stub
 	}
 
 	
-	public Pelicula(Integer idPelicula, Integer codPelicula, String nombrePelicula, String descripcion, String imagen,
-			double duracion, String actor, String director) {
+	
+	
+
+
+	
+	public Pelicula(Integer codPelicula,
+			@NotBlank(message = "Es obligatorio introducir un nombre de pelicula") String nombrePelicula,
+			String descripcion, String imagen, double duracion,
+			@NotBlank(message = "Debe ingresar un nombre de actor") String actor,
+			@NotBlank(message = "Debe ingresar el nombre del director") String director) {
 		super();
-		this.idPelicula = idPelicula;
 		this.codPelicula = codPelicula;
 		this.nombrePelicula = nombrePelicula;
 		this.descripcion = descripcion;
@@ -58,13 +67,10 @@ public class Pelicula {
 	}
 
 
-	public Integer getIdPelicula() {
-		return idPelicula;
-	}
 
-	public void setIdPelicula(Integer idPelicula) {
-		this.idPelicula = idPelicula;
-	}
+
+
+
 
 	public Integer getCodPelicula() {
 		return codPelicula;

@@ -2,38 +2,145 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Lista de Usuarios</title>
-</head>
+<title>Peliculas Administrador</title>
 
-
-<link th:rel="stylesheet" type="text/css" th:href="@{/css/misestilos.css}">
-
-<link th:rel="stylesheet" type="text/css"
-    th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!-- link hacia el boostrap -->
-  <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "> <!-- va a buscar el archivo de font-awesome y lo trae -->
-
+<link th:rel="stylesheet" type="text/css" th:href="@{/css/mystile.css}">
+<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+	  <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "> <!--  va a buscar el archivo de font-awesome y lo trae -->
+	
+	
+</head>  
 <body>
+<div th:insert="layout/header-admin :: header-admin" class="cabeza"></div>
 
-<div th:insert="layout/header-admin :: header-admin"></div> 
-
-
-
+  
 
 
+<div class="container">
+<br>
+<br>
+<div class="titulousu">
+    <h1>Formulario de Carga de Pelicula</h1>
+</div>
+	<!--  <h2 class="titulo">Formulario de Carga de Pelicula</h2>	-->
 
+<br>
+	<form id="formProducto" th:object="${unaPelicula}" th:action="${editMode}?@{/pelicula/modificar}:@{/pelicula/guardar}" method="post" enctype="multipart/form-data">
+<div class="form-row formulario">
+		<div class="form-group col-lg-6 col-md-12 col-sm-8 col-xs-12">
+			<label for="codigo"class="form-check-label">Codigo Pelicula</label> 
+			<input type="number" id="codigo" th:field="*{codPelicula}"class="form-control">
+		 	<div class="alert alert-danger" th:if="${#fields.hasErrors('codPelicula')}" th:errors="*{codPelicula}">Name	Error</div>
+		</div>
 
-<!-- lista de peliculas cuadro -->
+		<div class="form-group col-lg-6 col-md-12 col-sm-8 col-xs-12">
+			<label for="nombre">Nombre Pelicula</label> 
+			<input type="text"	id="nombre" th:field="*{nombrePelicula}"class="form-control">
+  	<div class="alert alert-danger" th:if="${#fields.hasErrors('nombrePelicula')}" th:errors="*{nombrePelicula}">Name	Error</div>
+		</div>
 
+		<!-- 
+		<div class="form-group col-lg-6 col-md-12 col-sm-8 col-xs-12">
+			<label for="decripcion"class="form-check-label">Descripcion</label> 
+			<input type="text" id="stock" th:field="*{descripcion}"class="form-control">
+		</div> -->
+		
+		
+		
+		
+		
+		
+		
+		<div class="form-group col-lg-6 col-md-12 col-sm-8 col-xs-12">
+			<label for="actor"class="form-check-label">Actor</label> 
+			<input type="text" id="actor" th:field="*{actor}"class="form-control">
+			  	<div class="alert alert-danger" th:if="${#fields.hasErrors('actor')}" th:errors="*{actor}">Name	Error</div>
+			
+		</div>
+		
+		
+		<div class="form-group col-lg-6 col-md-12 col-sm-8 col-xs-12">
+			<label for="director"class="form-check-label">Director</label> 
+			<input type="text" id="director" th:field="*{director}"class="form-control">
+						  	<div class="alert alert-danger" th:if="${#fields.hasErrors('director')}" th:errors="*{director}">Name	Error</div>
+			
+		</div>
+		
+		
+		<!--
+		<div class="form-group col-lg-12 col-md-12 col-sm-8 col-xs-12">
+			<label for="duracion"class="form-check-label">Duracion</label> 
+			<input type="number" id="duracion" th:field="*{duracion}"class="form-control">		
+		</div>
+		
+		 
+		<div class="form-group row">
+			<label for="descrip" class="color col-sm-2 col-form-label">Descripcion</label>
+			<textarea type="text" id="descrip" th:field="*{descripcion}" cols="50" rows="5"
+				class="col-form-label"></textarea>
+		</div> -->
+		
+		<div class="form-group col-lg-12 col-md-12 col-sm-8 col-xs-12">
+			<label for="descrip"class="form-check-label">Descripcion</label> 
+			<textarea type="text" id="descrip" th:field="*{descripcion}"class="form-control"></textarea>	
+		</div>
+		
+		<div class="form-group col-lg-12 col-md-12 col-sm-8 col-xs-12">
+			<label for="duracion"class="form-check-label">Duracion</label> 
+			<input type="number" id="duracion" th:field="*{duracion}"class="form-control"></input>	
+		</div>
+		
+		
+	
+<div class="form-row">
+				<div class="form-group col md-12">
+						<label for="file" class="col-sm-4 col-form-label" th:field="*{imagen}" >
+										</label>
+										<div class="col-sm-10" style="color:white">
+											<input type="file" name="file"
+											class="form-control-file" required
+												id="file"
+												accept="image/x-png,image/gif,image/jpeg,image/png,image/jpeg"
+												onchange="loadFile(event)" >
+											<img id="output" style="padding-top: 2px; width: 146px;" />
+										</div>
+									
+					</div>
+			</div>
 
- <h3>Lista de Peliculas</h3><br>
+		<div class="form-group col-lg-12 col-md-12 col-sm-8 col-xs-12">
+			<!--<button type="submit" value="Agregar"  class="btn agregar">Agregar <span><i class="far fa-paper-plane"></i></span></button> -->
+			<div class="col-sm-12 col-lg-12">		
+			     <input type="submit" class=" agregar" th:value="${editMode}?'Modificar Pelicula':'Agregar Pelicula'">
+			</div>
+		    <div class="col-sm-12 col-lg-12">				
+				<a class="cancelar" th:href="@{'/pelicula/cancelar'}">Cancelar</a>				
+			</div>
+		
+		</div>
+</div>
+	</form>
+	
+	
+	
+	<!-- lista de peliculas cuadro -->
+<br>
+<br>
+<br>
+
+<div class="titulousu">
+    <h1>Lista de peliculas</h1>
+</div>
+
+ <!--  <h3>Lista de Peliculas</h3><br>-->
  
      <div>
-     <table >
+     <table>
      <tr>
             <th>Codigo Pelicula</th>
-            <th>Nombre de Pelicula</th> <!-- headers, encabezados de la tabla -->
+            <th>Nombre de Pelicula</th> <!--   headers, encabezados de la tabla -->
             <th>Descripcion</th>
-            <th>Imagen</th>
+          <!--      <th>Imagen</th>-->
             <th>Duracion</th>
             <th>Actor</th>
             <th>Director</th>
@@ -42,24 +149,24 @@
      
      </tr>
       
-     <tr th:if="${peliculas.empty}"> <!-- los tr son para escribir en las filas -->
-           <td colspan="2">No hay peliculas en el listado </td>
+      <!--  
+      <tr th:if="${peliculas.empty}"> <!--  los tr son para escribir en las filas -->
+          <!-- <td colspan="2">   No hay peliculas en el listado </td>-->
       </tr>
      
-       <!--    {peliculas} esta viniendo de la capa controller --> 
-     <tr th:each="p : ${peliculas}"> <!-- fila nueva, por cada iteracion nosotros vamos a mostrar codigo de producto, nombre, marca stock -->
+        <!--   {peliculas} esta viniendo de la capa controller --> 
+     <tr th:each="p : ${peliculas}"> <!--  fila nueva, por cada iteracion nosotros vamos a mostrar codigo de pelicula, nombre, -->
                        <td th:text="${p.codPelicula}"></td>
                         <td th:text="${p.nombrePelicula}"></td>
                         <td th:text="${p.descripcion}"></td>
-                        <td th:text="${p.imagen}"></td>
+                    <!--    <td th:text="${p.imagen}"></td> -->  
                         <td th:text="${p.duracion}"></td>
                         <td th:text="${p.actor}"></td>
                        <td th:text="${p.director}"></td>
-                        
-                        
-                        
                        
-             <td><a th:href="@{'/pelicula/editar/'+${p.codPelicula}}">
+   
+   
+    <td><a th:href="@{'/pelicula/editar/'+${p.codPelicula}}">
                         <i class="far fa-edit fa"></i></a>
                         
                     <a th:onclick="'javascript:confirmarEliminar(\''+${p.codPelicula}+'\');'"> 
@@ -67,12 +174,17 @@
                    
 
                         </td>
-       </tr>
-     </table>
-     </div>
-
-
-
+					   
+					   
+					</tr>
+			
+				</table>
+			</div>
+</div>
+</div>
+	
+	
+	
 <!-- Modal Eliminar-->
 	<div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labellerdby="eliminarModal"
 		aria-hidden="true">
@@ -114,7 +226,6 @@
 	</script>
 
 
-
   <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
 		type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
@@ -122,6 +233,12 @@
 	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
 		type="text/javascript"
 		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<div th:insert="layout/footer :: footer" class="piepage"></div>
 </body>
 </html>

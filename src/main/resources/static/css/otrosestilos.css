@@ -1,81 +1,31 @@
-
-.container{
-	margin-top:110px;
+.cartelera{
+	margin-top: 80px;
+	margin-bottom: 50px;
+	
 }
 
 
-/*
- .bg-2{
-    background: linear-gradient(to right, rgb(221, 94, 137), rgb(247, 187, 151));
-  }
-
- */
-
-.t-stroke-shadow {
-	text-align: center;
-    color: #aabcfe;
-    text-shadow: -3px 3px #669, -3px -3px #669, 3px -3px #669, 3px 3px #669;
-
+.pie{
+	margin-top:400px;
 }
-
 
 
 body{
-	background-color: black;
-	/*background-image: url("https://www.solofondos.com/wp-content/uploads/2021/03/maxresdefault-1.jpg");*/
+	
+	
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6D_ZLRNuK1vJKKSqNViBDIOski0PmDUPBHA&usqp=CAU");
+	/*	background-image: url("https://media.istockphoto.com/vectors/movie-film-production-line-icons-cinema-icons-modern-graphic-elements-vector-id914471178?k=20&m=914471178&s=170667a&w=0&h=IAJylKhjZ8ktLoKYALeZQF24duEbSJzjyPTJ0c4OTIw=");*/
+	/*background-image: url("https://media.istockphoto.com/vectors/vector-neon-flat-design-icon-set-of-cinema-symbols-like-popcorn-vector-id1212752290?b=1&k=6&m=1212752290&s=170667a&w=0&h=dHGIO6zVnY6YctzUwbhFXALVHhdMhRG1No6bz2Z9QaQ=");*/
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 }
 
-table{
-/*estilo de el cuerpo de nuestra tabla*/
-/*background-color: #1e8cbe; */
-border-collapse: separate;
-width:74%;
-height:280px;
-margin:24px auto;
-border: 1px solid #005F73;
-font-weight:normal;
-text-align:center;
-font-family: 'calibri'
-
-
+.card{
+	margin-top: 45px;
 }
 
-
-
-/*
-table tr:nth-child(odd) {
-	para los colores de las filas pares*/
-	/*background-color: #94D2BD;
-	/*background:  colo blanquito bonito
-}
-
-table tr:nth-child(even) {
-	para los colores de las filas impares
-	background-color: #0A9396;
-}
-
-*/
-
-
-
-
-/*
-table {    
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 12px;    
-    margin: 45px;     
-    width: 450%; 
-    text-align: left;   
-    border-collapse: collapse;
-    
-    
-
-     }
-*/
 
 th
  { 

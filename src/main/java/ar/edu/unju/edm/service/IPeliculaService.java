@@ -14,8 +14,8 @@ public interface IPeliculaService {
 	public Pelicula obtenerPeliculaCodigo(Integer codPelicula);
 	public Pelicula crearPelicula();
 	public void modificarPelicula(Pelicula peliculaModificado) throws Exception;
-	public void eliminarPelicula(Integer codPelicula) throws Exception;
-	public Pelicula obtenerPelicula(String nombreProducto);
+	//public void eliminarPelicula(int id) throws Exception;
+	public Pelicula obtenerPelicula(String nombrePelicula);
 	public List<Pelicula> obtenerTodasPeliculas();
 	public Pelicula obtenerPeliculaNuevo();
 	public Pelicula encontrarUnaPelicula(Integer codPelicula) throws Exception;

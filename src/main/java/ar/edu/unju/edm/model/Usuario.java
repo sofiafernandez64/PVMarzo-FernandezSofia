@@ -19,10 +19,6 @@ import org.springframework.stereotype.Component;
 public class Usuario {
 	
 
-	@Column
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idUsuario;
-	
 	@Id
 	@Column
 	private Integer dni;
@@ -44,10 +40,14 @@ public class Usuario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(Integer idUsuario, Integer dni, String apellido, String nombre, LocalDate fechaNacimiento,
-			String password, String tipoUsuario) {
+	
+
+	
+
+	public Usuario(Integer dni, @NotBlank(message = "Debe ingresar un apellido") String apellido,
+			@NotBlank(message = "Debe ingresar un nombre") String nombre, LocalDate fechaNacimiento, String password,
+			String tipoUsuario) {
 		super();
-		this.idUsuario = idUsuario;
 		this.dni = dni;
 		this.apellido = apellido;
 		this.nombre = nombre;
@@ -56,13 +56,9 @@ public class Usuario {
 		this.tipoUsuario = tipoUsuario;
 	}
 
-	public Integer getIdUsuario() {
-		return idUsuario;
-	}
 
-	public void setIdUsuario(Integer idUsuario) {
-		this.idUsuario = idUsuario;
-	}
+
+
 
 	public Integer getDni() {
 		return dni;
@@ -112,14 +108,17 @@ public class Usuario {
 		this.tipoUsuario = tipoUsuario;
 	}
 
+
+
+
+
 	@Override
 	public String toString() {
-		return "Usuario [idUsuario=" + idUsuario + ", dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre
-				+ ", fechaNacimiento=" + fechaNacimiento + ", password=" + password + ", tipoUsuario=" + tipoUsuario
-				+ "]";
+		return "Usuario [dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre + ", fechaNacimiento="
+				+ fechaNacimiento + ", password=" + password + ", tipoUsuario=" + tipoUsuario + "]";
 	}
-	
-	
+
+
 
 
 }

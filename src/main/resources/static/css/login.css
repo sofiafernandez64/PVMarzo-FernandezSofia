@@ -85,4 +85,9 @@ input[type=checkbox] {
 	width: 20%;
 }
 
-
+.alert-danger{
+	color:white;
+}
+.alert-success{
+	color:white;
+}
