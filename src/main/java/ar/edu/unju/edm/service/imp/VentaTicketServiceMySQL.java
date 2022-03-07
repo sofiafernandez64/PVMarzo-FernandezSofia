@@ -1,5 +1,6 @@
 package ar.edu.unju.edm.service.imp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,16 @@ public class VentaTicketServiceMySQL implements IVentaTicketService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	/*
+	@Override
+	public List<VentaTicket> buscarPelicula(String nombrePelicula) {
+		// TODO Auto-generated method stub
+		List<VentaTicket> compras = new ArrayList<VentaTicket>();
+
+		compras= ventaDAO.findByPeliculaNombre(nombrePelicula);
+
+		return compras;
+	}*/
 
 }

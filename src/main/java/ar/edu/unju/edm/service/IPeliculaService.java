@@ -20,5 +20,6 @@ public interface IPeliculaService {
 	public Pelicula obtenerPeliculaNuevo();
 	public Pelicula encontrarUnaPelicula(Integer codPelicula) throws Exception;
 
-	
+	public void eliminarPelicula(Integer codPelicula);
+
 }

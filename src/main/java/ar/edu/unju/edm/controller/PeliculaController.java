@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.edm.model.Pelicula;
 import ar.edu.unju.edm.service.IPeliculaService;
@@ -114,7 +115,12 @@ public String modificarPelicula(@RequestParam("file")MultipartFile file, @ModelA
 
 
 
+@GetMapping("/pelicula/eliminar/{codPelicula}")
+public String EliminarPelicula(@PathVariable(value="codPelicula")Integer codigo) {
+   peliculaService.eliminarPelicula(codigo);
    
+	return "redirect:/peliculaadmi/mostrar";
+}
 
 	
 

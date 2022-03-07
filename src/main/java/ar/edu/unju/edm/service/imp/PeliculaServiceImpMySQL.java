@@ -91,6 +91,14 @@ public class PeliculaServiceImpMySQL implements IPeliculaService{
 	}
 
 
+	@Override
+	public void eliminarPelicula(Integer codPelicula) {
+		// TODO Auto-generated method stub
+		peliculaDAO.deleteById(codPelicula);
+		
+	}
+
+
 
 	
 		

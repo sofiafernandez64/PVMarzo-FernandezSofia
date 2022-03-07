@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.edm.model.Pelicula;
 import ar.edu.unju.edm.model.VentaTicket;
@@ -75,6 +76,7 @@ public class VentaTicketController {
 	public String getBuscarUsuarios(Model model,@RequestParam(name = "buscarnombrepelicula")String nombreb) {
 		
 		model.addAttribute("buscarnombrepelicula",nombreb);
+		model.addAttribute("compras", ventasTicketService.obtenerTodaVenta());
 		//model.addAttribute("compras",compraService.buscarCompra(nombreb));
 		return "ventas-por-pelicula";
 	}
@@ -86,6 +88,14 @@ public class VentaTicketController {
 		return "ventas-por-pelicula";
 	}
 	*/
+	
+	@GetMapping("/compra/listado/")
+	public ModelAndView getComprasPage() {
+		ModelAndView modelView = new ModelAndView("ventas-por-pelicula");
+		//modelView.addObject("buscarnombrepelicula","");
+		modelView.addObject("compras",ventasTicketService.obtenerTodaVenta());
+		return modelView;
+	}
 	
 	/*
 	

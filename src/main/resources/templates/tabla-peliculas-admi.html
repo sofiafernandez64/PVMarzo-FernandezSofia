@@ -169,10 +169,12 @@
     <td><a th:href="@{'/pelicula/editar/'+${p.codPelicula}}">
                         <i class="far fa-edit fa"></i></a>
                         
-                    <a th:onclick="'javascript:confirmarEliminar(\''+${p.codPelicula}+'\');'"> 
+        	<a th:href="@{/pelicula/eliminar/}+${p.codPelicula}" class="btn btn-danger">Eliminar</a>
+                        
+               <!--     <a th:onclick="'javascript:confirmarEliminar(\''+${p.codPelicula}+'\');'"> 
                     <i class="fa fa-trash-alt"></i></a>
                    
-
+ --> 
                         </td>
 					   
 					   
@@ -185,7 +187,7 @@
 	
 	
 	
-<!-- Modal Eliminar-->
+<!-- Modal Eliminar
 	<div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labellerdby="eliminarModal"
 		aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
@@ -224,7 +226,7 @@
 			window.location = "eliminarUsuario/"+id;
 		}
 	</script>
-
+-->
 
   <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
 		type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
