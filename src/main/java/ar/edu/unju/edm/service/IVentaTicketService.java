@@ -15,5 +15,9 @@ public interface IVentaTicketService {
 	public VentaTicket crearVenta();
 	public List<VentaTicket> obtenerTodaVenta();
 	public VentaTicket encontrarUnaVenta(int id) throws Exception;
+	
+	
+	public List<VentaTicket> buscarPelicula(String nombrePelicula);
+
 
 }

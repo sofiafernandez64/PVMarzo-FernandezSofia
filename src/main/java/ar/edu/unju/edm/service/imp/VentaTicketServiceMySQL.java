@@ -34,11 +34,18 @@ public class VentaTicketServiceMySQL implements IVentaTicketService{
 	@Override
 	public List<VentaTicket> obtenerTodaVenta() {
 		// TODO Auto-generated method stub
+		return (List<VentaTicket>) ventaDAO.findAll();
+	}
+	
+
+	@Override
+	public VentaTicket encontrarUnaVenta(int id) throws Exception {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public VentaTicket encontrarUnaVenta(int id) throws Exception {
+	public List<VentaTicket> buscarPelicula(String nombrePelicula) {
 		// TODO Auto-generated method stub
 		return null;
 	}

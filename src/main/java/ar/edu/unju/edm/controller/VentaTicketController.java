@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ar.edu.unju.edm.model.Pelicula;
 import ar.edu.unju.edm.model.VentaTicket;
@@ -54,9 +55,69 @@ public class VentaTicketController {
 	@PostMapping("/pelicula/vender")
 	public String guardarNuevaVenta(@ModelAttribute("venta") VentaTicket unaVenta, Model model) {
 		ventasTicketService.guardarVenta(unaVenta);
-		return "redirect:/pelicula/ventas";
+		return "redirect:/pelicula/ventas"; 
 		
 	}
+	
+	
+	
+	
+	@GetMapping("/consultar/ticket")
+	public String consultaUsuarios(Model model) {
+		model.addAttribute("buscarnombrepelicula","");
+		model.addAttribute("ventasticket", ventasTicketService.obtenerTodaVenta());
+		return "ventas-por-pelicula";
+	}
+	
+	
+	
+	@GetMapping("/compra/buscar/")
+	public String getBuscarUsuarios(Model model,@RequestParam(name = "buscarnombrepelicula")String nombreb) {
+		
+		model.addAttribute("buscarnombrepelicula",nombreb);
+		//model.addAttribute("compras",compraService.buscarCompra(nombreb));
+		return "ventas-por-pelicula";
+	}
+	
+	/*
+	@GetMapping("/consultar/pelicula")
+	public String consultaPelicula(Model model) {
+		model.addAttribute("todaspeliculas", peliculaService.obtenerTodasPeliculas());
+		return "ventas-por-pelicula";
+	}
+	*/
+	
+	/*
+	
+	@PostMapping("/consultar/ticketpost")
+	public String consultarPost(Model model) {
+		
+		return "redirect:/consultar/ticket";
+	}
+	
+	*/
+	/*
+	@PostMapping("/pelicula/buscar")
+	public String buscarPelicula(@ModelAttribute("unaPelicua") Pelicula peliculaEncontrado, Model model) {
+		peliculaService.encontrarUnaPelicula(peliculaEncontrado);
+		model.addAttribute("ventasticket", ventasTicketService.obtenerTodaVenta());
+
+		return"resultado";
+	}*/
+	
+	/*
+	@PostMapping("/producto/guardar")//interactuo con la interfaz, le cargo datos, y luego de mostrar ocuurre algo, por eso es post Mapping//el @ModelAttibute esta diciendo que esta viniendo un atributo desde el modelo, el atributo se llama unProducto de tipo Producto y a partir de ahora se llama nuevoProducto
+	public String guardarNuevoProducto(@ModelAttribute("unProducto") Producto nuevoProducto, Model model) {
+		aqui tengo que buscar
+		iProductoService.guardarProducto(nuevoProducto);
+		//syso es una linea de control, para ver que se guardó bien
+		System.out.println(iProductoService.obtenerTodosProductos().get(0).getMarca()); //en la posicion 0 (esta el producto), getMarca para obtener la marca
+		//obtenerTodosProductos lo mando a traves del model con el nombre de "productos".
+		model.addAttribute("productos", iProductoService.obtenerTodosProductos());//
+		SOFIA.error("solo de prueba"); //MENSAJES EN ROJO
+		return "resultado"; //DEVUELVE UNA PAGINA
+	}
+	*/
 	
 	
 	
