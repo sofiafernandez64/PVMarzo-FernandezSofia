@@ -40,6 +40,11 @@ public class UsuarioController {
 	}
 	
 
+	@GetMapping("/usuario/crearNuevo")
+	public String crearUsuarioNuevo(Model model) {
+		model.addAttribute("unUsuario", usuarioService.crearUsuario());
+		return "registro-usuario";
+	}
 
 	@GetMapping("/usuario/mostrar")
 	public String cargarUsuarios(Model model) {
@@ -69,8 +74,9 @@ public class UsuarioController {
 		return("usuarioedito"); //ñista-usuarios
 	}
 
+	/*
 	@PostMapping("/usuario/guardar")
-	public String guardarNuevoProducto(@Valid @ModelAttribute("unUsuario") Usuario nuevoUsuario,BindingResult resultado, Model model) {
+	public String guardarNuevoUsuario(@Valid @ModelAttribute("unUsuario") Usuario nuevoUsuario,BindingResult resultado, Model model) {
 		LOGGER.info("METHOD: ingresando a Guardar");
 	if (resultado.hasErrors())
 	{
@@ -86,6 +92,30 @@ public class UsuarioController {
 	}
 	
 	}
+	*/
+	
+	@PostMapping("/usuario/guardar")
+	public String guardarNuevoUsuario(@Valid @ModelAttribute("unUsuario") Usuario nuevoUsuario,BindingResult resultado, Model model) {
+		LOGGER.info("METHOD: ingresando a Guardar");
+	if (resultado.hasErrors())
+	{
+		model.addAttribute("unUsuario",nuevoUsuario);
+		model.addAttribute("usuarios", usuarioService.obtenerTodosUsuarios());
+	return ("registro-usuario");
+	}
+	else {
+	usuarioService.guardarUsuario(nuevoUsuario);		
+		LOGGER.info("Tamaño del Listado: "+usuarioService.obtenerTodosUsuarios().size());
+		return "redirect:/home";
+	}
+	
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	@PostMapping("/usuario/modificar")

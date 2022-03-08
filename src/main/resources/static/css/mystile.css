@@ -1,3 +1,51 @@
+body{
+	
+	
+	background-image: url("https://cdn.buenavibra.es/wp-content/uploads/2020/08/24150418/Netflix-Septiembre-casa-cuarentena-Bigstock-1200-1170x600.jpg");
+	/*	background-image: url("https://media.istockphoto.com/vectors/movie-film-production-line-icons-cinema-icons-modern-graphic-elements-vector-id914471178?k=20&m=914471178&s=170667a&w=0&h=IAJylKhjZ8ktLoKYALeZQF24duEbSJzjyPTJ0c4OTIw=");*/
+	/*background-image: url("https://media.istockphoto.com/vectors/vector-neon-flat-design-icon-set-of-cinema-symbols-like-popcorn-vector-id1212752290?b=1&k=6&m=1212752290&s=170667a&w=0&h=dHGIO6zVnY6YctzUwbhFXALVHhdMhRG1No6bz2Z9QaQ=");*/
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	
+}
+
+
+
+h2{
+	text-align:center;
+	color:black;
+	
+}
+
+.form-control{
+	color:white;
+	
+}
+.form-check-label{
+		color:white;
+	
+	
+}
+.form-check-labe{
+		color:red;
+		background-color:black;
+		font-size:20px;
+	font-weight: bold;
+	
+	
+}
+.form-labe{
+	
+	color:red;
+		background-color:black;
+		font-size:20px;
+	font-weight: bold;
+	
+}
+	
+}
 
 
 .form-check-label{

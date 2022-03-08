@@ -1,15 +1,16 @@
-<!--  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
 <meta charset="UTF-8">
-<title>Lista de Usuarios</title>
+<title>Registrate</title>
 </head>
 
 
+  <link th:rel="stylesheet" type="text/css" th:href="@{/css/mystile.css}">
 
 <link th:rel="stylesheet" type="text/css"
-    th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!--link hacia el boostrap 
-   <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} ">    va a buscar el archivo de font-awesome y lo trae 
+    th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!--link hacia el boostrap -->
+   <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} ">  <!--  va a buscar el archivo de font-awesome y lo trae  --> 
 
   
 
@@ -17,10 +18,14 @@
  <form id="formUsuarioRegistro" th:object="${unUsuario}" th:action="@{/usuario/guardar}" method="post"> 
  
  
+ 	<body>
  
-<h1>Registrate</h1>
+<h2>Registrate</h2>
 <hr>
-
+<br>
+<br>
+<br>
+<br>
 
 <div class="container">
 <form role="form">
@@ -28,7 +33,7 @@
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                    <label for="nombre">Nombre:</label>
+                    <label for="nombre" class="form-check-labe">NOMBRE:</label>
                 <input type="text" name="nombre" id="nombre" th:field="*{nombre}" class="form-control" placeholder="Nombre" tabindex="1">
                	<div class="alert alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Name	Error</div>
                 </div>
@@ -41,7 +46,7 @@
 
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                    <label for="apellido">Apellido:</label>
+                    <label for="apellido" class="form-check-labe">APELLIDO:</label>
                     <input type="text" name="apellido" id="apellido" th:filed="*{apellido}" class="form-control" placeholder="Ingrse su apellido" tabindex="2">
                                	<div class="alert alert-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Name	Error</div>
                 
@@ -54,7 +59,7 @@
   
 
         <div class="form-group">
-            <label for="email">dni:</label>
+            <label for="email" class="form-check-labe">DNI:</label>
             <input type="number" name="" id="dni" th:field=*{dni} class="form-control" placeholder="dni" tabindex="6">
         
         </div>
@@ -62,7 +67,7 @@
 
 
         <div class="form-group">
-            <label for="fechaNacimiento">Fecha Nacimiento:</label>
+            <label for="fechaNacimiento" class="form-check-labe">FECHA DE NACIMIENTO:</label>
             <input type="date" name="" id="fechaNacimiento" th:field=*{fechaNacimiento} class="form-control" placeholder="dni" tabindex="6">
         
         </div>
@@ -72,7 +77,7 @@
 
 
         <div class="form-group">
-            <label for="email">Contrasenia: </label>
+            <label for="email" class="form-check-labe">CONTRASEÑA: </label>
             <input type="password" name="" id="password" th:field=*{password} class="form-control" placeholder="Ingrese su contrasenia" tabindex="6">
                                        	<div class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Name	Error</div>
         
@@ -80,7 +85,7 @@
 
 
          <div class="form-group">
-                    <label for="tipoUsuarrio" class="form-label">Tipo Usuario</label>
+                    <label for="tipoUsuarrio" class="form-labe">TIPO DE USUARIO</label>
                     <select class="form-control" name="tipoUsuario" id="tipoUsuario" th:field="*{tipoUsuario}">
                     <option value="-- Seleccione su usuario --" selected disabled>-- Seleccione su usuario --</option>
                     <option value="Admin">Admin</option>
@@ -90,18 +95,18 @@
                 </div>
         
         
-          <div class="row">
-            <div class="col-xs-6 col-md-6"><input type="submit" value="Guardar" class="btn btn-danger btn-block btn-lg" tabindex="7"
+          <div class="text-center">
+            <div class="col-xs-4 col-md-8"><input type="submit" value="Guardar" class="btn btn-success btn-block btn-lg" tabindex="7"
                 title="Guardar datos ingresados"></div>
 
-            <div class="col-xs-6 col-md-6"><input type="submit" value="Cancelar" class="btn btn-block btn-lg" tabindex="8">
-            </div>
+            
         </div>
+       
   
-        <div>
-             <button type="submit" class="btn btn-primary">Agregar</button>  <!-- si es de tipo submit va al action y ejecuta 
+        <!--  <div>
+             <button type="submit" class="btn btn-primary">Agregar</button>  <!-- si es de tipo submit va al action y ejecuta -->
              
-    </div>
+    </div>-->
    
     
 </form>
@@ -111,7 +116,7 @@
  
  </div>
  </div>
- </form>-->
+ </form>
  
 
 

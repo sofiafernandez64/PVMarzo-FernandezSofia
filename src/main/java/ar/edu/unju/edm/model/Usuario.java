@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
@@ -20,17 +21,20 @@ public class Usuario {
 	
 
 	@Id
-	@Column
+	@Column	
 	private Integer dni;
 	@NotBlank(message="Debe ingresar un apellido")
+	@Size(min = 3, message = "El apellido debe tener 3 caracteres como minimo")
 	@Column
 	private String apellido;
 	@NotBlank(message="Debe ingresar un nombre")
+	@Size(min = 3, message = "El nombre debe tener 3 caracteres como minimo")
 	@Column
 	private String nombre;
 	@Column
 	@DateTimeFormat(pattern = "yyyy-MM-dd") //recibe la fechaNacimiento de año, mes y dia y la guarda en fechaNacimiento
 	private LocalDate fechaNacimiento; //LocalDate
+	@NotBlank(message="Debe ingresar una contrasenia")
 	@Column
 	private String password;
 	@Column
