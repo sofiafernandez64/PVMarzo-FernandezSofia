@@ -70,18 +70,7 @@
 		</div>
 		
 		
-		<!--
-		<div class="form-group col-lg-12 col-md-12 col-sm-8 col-xs-12">
-			<label for="duracion"class="form-check-label">Duracion</label> 
-			<input type="number" id="duracion" th:field="*{duracion}"class="form-control">		
-		</div>
 		
-		 
-		<div class="form-group row">
-			<label for="descrip" class="color col-sm-2 col-form-label">Descripcion</label>
-			<textarea type="text" id="descrip" th:field="*{descripcion}" cols="50" rows="5"
-				class="col-form-label"></textarea>
-		</div> -->
 		
 		<div class="form-group col-lg-12 col-md-12 col-sm-8 col-xs-12">
 			<label for="descrip"class="form-check-label">Descripcion</label> 
@@ -91,7 +80,7 @@
 		</div>
 		
 		<div class="form-group col-lg-12 col-md-12 col-sm-8 col-xs-12">
-			<label for="duracion"class="form-check-label">Duracion</label> 
+			<label for="duracion"class="form-check-label">Duracion en minutos</label> 
 			<input type="number" id="duracion" th:field="*{duracion}"class="form-control"></input>	
 		</div>
 		
@@ -171,7 +160,7 @@
                        
    
    
-    <td><a th:href="@{'/pelicula/editar/'+${p.codPelicula}}">
+    <td><a th:href="@{'/pelicula/editar/'+${p.codPelicula}}"> <!-- por referencia -->
                         <i class="far fa-edit fa"></i></a>
                         
         	<a th:href="@{/pelicula/eliminar/}+${p.codPelicula}" class="btn btn-danger">Eliminar</a>

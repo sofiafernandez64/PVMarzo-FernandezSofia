@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--  <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
@@ -7,15 +7,15 @@
 
 <link th:rel="stylesheet" type="text/css" th:href="@{/css/misestilos.css}">
 <link th:rel="stylesheet" type="text/css"
-    th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!-- link hacia el boostrap -->
-<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "> <!-- va a buscar el archivo de font-awesome y lo trae -->
+    th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!-- link hacia el boostrap
+<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "> <!-- va a buscar el archivo de font-awesome y lo trae 
 
 
 <body>
-<div th:insert="layout/header :: header"></div> 
+<div th:insert="layout/header :: header"></div> -->
 
 
-<!-- lista de peliculas cuadro -->
+<!-- lista de peliculas cuadro 
 <br>
 <br>
 <br>
@@ -27,7 +27,7 @@
      <table >
      <tr>
             <th>Codigo Pelicula</th>
-            <th>Nombre de Pelicula</th> <!-- headers, encabezados de la tabla -->
+            <th>Nombre de Pelicula</th>--> <!-- headers, encabezados de la tabla 
             <th>Descripcion</th>
             <th>Imagen</th>
             <th>Duracion</th>
@@ -37,12 +37,12 @@
      
      </tr>
       
-     <tr th:if="${peliculas.empty}"> <!-- los tr son para escribir en las filas -->
+     <tr th:if="${peliculas.empty}"> --><!-- los tr son para escribir en las filas 
            <td colspan="2">No hay peliculas en el listado </td>
-      </tr>
+      </tr>-->
      
-       <!--    {peliculas} esta viniendo de la capa controller --> 
-     <tr th:each="p : ${peliculas}"> <!-- fila nueva, por cada iteracion nosotros vamos a mostrar codigo de producto, nombre, marca stock -->
+       <!--    {peliculas} esta viniendo de la capa controller
+     <tr th:each="p : ${peliculas}">  fila nueva, por cada iteracion nosotros vamos a mostrar codigo de producto, nombre, marca stock 
                        <td th:text="${p.codPelicula}"></td>
                         <td th:text="${p.nombrePelicula}"></td>
                         <td th:text="${p.descripcion}"></td>
@@ -53,13 +53,13 @@
                        <td th:text="${p.director}"></td>
                         
                         
-                     <!--    
-                       
+                        
+                        
              <td><a th:href="@{'/pelicula/editar/'+${p.codPelicula}}">
                         <i class="far fa-edit fa"></i></a>
                         
                     <a th:onclick="'javascript:confirmarEliminar(\''+${p.codPelicula}+'\');'"> 
-                    <i class="fa fa-trash-alt"></i></a> -->
+                    <i class="fa fa-trash-alt"></i></a> 
                    
 
                         </td>
@@ -85,4 +85,4 @@
 	
 
 </body>
-</html>
+</html> -->

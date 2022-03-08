@@ -12,15 +12,18 @@
     th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}"> <!-- link hacia el boostrap -->
 <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css} "> <!-- va a buscar el archivo de font-awesome y lo trae -->
 
+	<body style="background-image: url(https://www.solofondos.com/wp-content/uploads/2016/04/Android-Lollipop-Material-Design-Wallpaper-IdeaLTriangles.png)">
+
 <body>
 
 <div class="container sofia">
+		<h3 class="titulo text-center mt-3 mb-5"><u>Modifica un usuario</u></h3> <!-- u muestra subrayado -->
 
  
    <!-- si el editMode esta en verdadero, lo que hago es modificar, pero si esta en falso lo que hago es guardar
      <form id="formUsuario" th:object="${unUsuario}" th:action="${editMode}?@{/usuario/modificar}:@{/usuario/guardar}" method="post" enctype="multipart/form-data">-->
     
-         <form id="formProducto" th:object="${unUsuario}" th:action="@{/usuario/modificar}" method="post" enctype="multipart/form-data">-->
+         <form id="formProducto" th:object="${unUsuario}" th:action="@{/usuario/modificar}" method="post" enctype="multipart/form-data">
     
     
     

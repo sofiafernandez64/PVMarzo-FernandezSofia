@@ -23,13 +23,13 @@ public class VentaTicket { //ESTA CLASE ESTA HACIENDO LA VINCULACION ENTRE PELIC
 	private Integer idVenta; //campo identificatorio
 
 	
-	@ManyToOne
+	@ManyToOne 
 	@JoinColumn(name = "dni") //estamos transformando nuestra clase venta en el contenedor de la relacion de usuario y pelicula, entre usuario y pelicula esta esta clase
 	private Usuario usuario;
 	
-	@ManyToOne //muchos tickets pueden venderse a un usuario, y un usuario puede estar en muchas ventas de tickets
+	@ManyToOne 
 	@JoinColumn(name = "codPelicula") //conla anotacion joincolumn va a crear una columna, no guarda la pelicula
-	private Pelicula pelicula; //NUESTRA venta se relaciona con dos objetos que nosotros ya tenemos en nuestra tabla
+	private Pelicula pelicula; //NUESTRA venta se relaciona con dos objetos que nosotros ya tenemos en otras tabla
 
 	
 	

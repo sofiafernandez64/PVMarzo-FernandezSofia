@@ -32,8 +32,9 @@ public class PeliculaController {
 	IPeliculaService peliculaService;
 	
 	
-	
-	@GetMapping("/pelicula/mostrar")
+	//no lo estoy usando 
+	/*
+	 * @GetMapping("/pelicula/mostrar")
 	public String cargarPelicula(Model model) {
 	
 		//model.addAttribute("unaPelicula", peliculaService.crearPelicula());
@@ -41,6 +42,7 @@ public class PeliculaController {
 		return("lista-peliculas");
 		
 	}
+		*/
 	
 		@GetMapping("/peliculaadmi/mostrar")
 		public String cargarPeliculaAdmi(Model model) {
@@ -51,7 +53,7 @@ public class PeliculaController {
 
 		}
 		
-		
+	
 		
 
 @GetMapping("/pelicula/editar/{codProducto}")
@@ -63,7 +65,7 @@ public String editarPelicula(Model model, @PathVariable(name="codProducto") int 
 		model.addAttribute("editMode", "true");
 	}
 	catch(Exception e)
-	{//pasar excepcione a html
+	{
 		model.addAttribute("formUsuarioErrorMessage", e.getMessage());
 		model.addAttribute("unaPelicula", peliculaService.crearPelicula());
 		model.addAttribute("editMode", "false");
@@ -100,7 +102,7 @@ public String modificarPelicula(@RequestParam("file")MultipartFile file, @ModelA
           peliculaModificado.setImagen(base64);
 		peliculaService.modificarPelicula(peliculaModificado);
 		model.addAttribute("unaPelicula", new Pelicula());
-		model.addAttribute("editMode", "false");
+		model.addAttribute("editMode", "false"); //ya hice la modificacion
 	}
 	catch(Exception e)
 	{

@@ -57,7 +57,7 @@ public class UsuarioController {
 	
 	
 	@GetMapping("/usuario/editar/{dni}")
-	public String editarCliente(Model model, @PathVariable(name="dni") int dni) throws Exception{
+	public String editarUsuario(Model model, @PathVariable(name="dni") int dni) throws Exception{
 		try {
 			//permite realizar una accion, y si ocurre error no se cae el program
 			Usuario usuarioEncontrado = usuarioService.encontrarUnUsuario(dni);
@@ -100,12 +100,11 @@ public class UsuarioController {
 	if (resultado.hasErrors())
 	{
 		model.addAttribute("unUsuario",nuevoUsuario);
-		model.addAttribute("usuarios", usuarioService.obtenerTodosUsuarios());
+		//model.addAttribute("usuarios", usuarioService.obtenerTodosUsuarios());
 	return ("registro-usuario");
 	}
 	else {
 	usuarioService.guardarUsuario(nuevoUsuario);		
-		LOGGER.info("Tamaño del Listado: "+usuarioService.obtenerTodosUsuarios().size());
 		return "redirect:/home";
 	}
 	
@@ -144,9 +143,8 @@ public class UsuarioController {
 		return "redirect:/usuario/mostrar";
 	}
 	
-	//modal peticiones
 	@GetMapping("/usuario/eliminarUsuario/{dni}")
-	public String eliminarCliente(Model model, @PathVariable(name="dni") int dni) {		
+	public String eliminarUsuario(Model model, @PathVariable(name="dni") int dni) {		
 		try {		usuarioService.eliminarUsuario(dni);			
 		}
 		catch(Exception e){

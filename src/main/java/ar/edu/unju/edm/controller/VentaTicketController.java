@@ -73,9 +73,9 @@ public class VentaTicketController {
 	
 	
 	@GetMapping("/compra/buscar/")
-	public String getBuscarUsuarios(Model model,@RequestParam(name = "buscarnombrepelicula")String nombreb) {
+	public String getBuscarUsuarios(Model model,@RequestParam(name = "buscarnombrepelicula")String nombrep) {
 		
-		model.addAttribute("buscarnombrepelicula",nombreb);
+		model.addAttribute("buscarnombrepelicula",nombrep);
 		model.addAttribute("compras", ventasTicketService.obtenerTodaVenta());
 		//model.addAttribute("compras",compraService.buscarCompra(nombreb));
 		return "ventas-por-pelicula";
@@ -114,21 +114,6 @@ public class VentaTicketController {
 
 		return"resultado";
 	}*/
-	
-	/*
-	@PostMapping("/producto/guardar")//interactuo con la interfaz, le cargo datos, y luego de mostrar ocuurre algo, por eso es post Mapping//el @ModelAttibute esta diciendo que esta viniendo un atributo desde el modelo, el atributo se llama unProducto de tipo Producto y a partir de ahora se llama nuevoProducto
-	public String guardarNuevoProducto(@ModelAttribute("unProducto") Producto nuevoProducto, Model model) {
-		aqui tengo que buscar
-		iProductoService.guardarProducto(nuevoProducto);
-		//syso es una linea de control, para ver que se guardó bien
-		System.out.println(iProductoService.obtenerTodosProductos().get(0).getMarca()); //en la posicion 0 (esta el producto), getMarca para obtener la marca
-		//obtenerTodosProductos lo mando a traves del model con el nombre de "productos".
-		model.addAttribute("productos", iProductoService.obtenerTodosProductos());//
-		SOFIA.error("solo de prueba"); //MENSAJES EN ROJO
-		return "resultado"; //DEVUELVE UNA PAGINA
-	}
-	*/
-	
 	
 	
 }

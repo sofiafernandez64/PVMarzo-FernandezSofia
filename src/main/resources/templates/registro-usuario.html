@@ -20,7 +20,7 @@
  
  	<body>
  
-<h2>Registrate</h2>
+<h2>Formulario de Registro</h2>
 <hr>
 <br>
 <br>
@@ -36,6 +36,7 @@
                     <label for="nombre" class="form-check-labe">NOMBRE:</label>
                 <input type="text" name="nombre" id="nombre" th:field="*{nombre}" class="form-control" placeholder="Nombre" tabindex="1">
                	<div class="alert alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Name	Error</div>
+               <!-- captura el msj de la validacion -->
                 </div>
             </div>
 
@@ -106,7 +107,7 @@
         <!--  <div>
              <button type="submit" class="btn btn-primary">Agregar</button>  <!-- si es de tipo submit va al action y ejecuta -->
              
-    </div>-->
+    </div>
    
     
 </form>

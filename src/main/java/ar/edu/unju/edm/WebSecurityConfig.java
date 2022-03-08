@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.formLogin()
 				.loginPage("/login")
 				.permitAll()
-				.successHandler(autenticacion)
+				.successHandler(autenticacion)//vuelve del autenticatio handler
 				.failureUrl("/login?error=true")
 				.usernameParameter("dni")
 				.passwordParameter("password")				
