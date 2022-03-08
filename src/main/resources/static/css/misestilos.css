@@ -110,11 +110,14 @@ tr:hover td {
 	 
 	 
 .jumbotron-fluid{
-		background-image: url("https://www.wallpapertip.com/wmimgs/58-583736_navy-blue-backgrounds-dark-blue-background-plain.jpg");
+		/*background-image: url("https://www.wallpapertip.com/wmimgs/58-583736_navy-blue-backgrounds-dark-blue-background-plain.jpg");*/
 	/*background-position: center center;
 	
 	background-attachment: fixed;
 	*/
+	background-image: url("http://www.guaza.co/images/tbox-franjagris.jpg?crc=382437556");
+
+
 	background-repeat: no-repeat;background-size: cover;
 	
 }

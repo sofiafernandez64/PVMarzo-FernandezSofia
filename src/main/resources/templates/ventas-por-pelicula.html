@@ -12,6 +12,8 @@
 <title>Consulta</title>
 </head>
 <div th:insert="layout/header-admin :: header-admin"></div>
+	<body style="background-image: url(https://www.solofondos.com/wp-content/uploads/2015/11/FILE_A4142C-73FE08-A7FC02-E047F3-FD4C04-A2FEFB.jpg)">
+
 <body>
 
 
@@ -21,6 +23,7 @@
    
    
    <h1>Ventas</h1>
+   <div class="container">
 
  <table >
      <tr>
@@ -50,7 +53,9 @@
        </tr>
      </table>
      </div>
-     
+     <br>
+     <br>
+     <br>
      
      <div class="container mb-3 mt-5" style="background-color: #d0dafd;"> 
 				<h1 class="text-center mt-3 mb-0">Usuarios que compraron tickets</h1>
@@ -70,55 +75,10 @@
 				</form>
 			</div>
 
+</div>
 
 
-
-
-	
-<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
-			type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
-		<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
-			type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
-		<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
-			type="text/javascript"
-			src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>	
-</body>
-</html>
-
-
-<!--  
-
-  <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-
-<link th:rel="stylesheet" type="text/css"
-	th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
-	<link th:rel="stylesheet" type="text/css" th:href="@{/css/mystile.css}">
-	
-<link th:rel="stylesheet"
-	th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<div th:insert="layout/header-admin :: header-admin"></div>
-<body>
-
-
-     <tr>
-            
-            	<label for="cantidad" class="col-sm-2 col-form-label">Usuario</label>
-			<div class="col-sm-10">
-			<div>
-			 <select th:field="*{venta.dni}" class="custom-select mt-3 mb-3 border-info" required>
-			<option th:each="u :${ventasticket}" th:value="${u.dni}" th:text="${u.nombre}" value="----"></option> 
-			</select>
-			 
-			</div>
-			</div>
-
-
-
+		<div th:insert="layout/footer :: footer" class="piepage"></div>
 
 	
 <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
@@ -130,6 +90,4 @@
 			src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>	
 </body>
 </html>
-
--->
 

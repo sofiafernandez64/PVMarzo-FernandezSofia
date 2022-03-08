@@ -7,7 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
@@ -20,11 +22,14 @@ public class Pelicula {
 	
 	@Id
 	@Column
+	@Min(value=1, message = "El codigo de la pelicula debe ser superior a 1")
 	private Integer codPelicula;
 	@NotBlank(message="Es obligatorio introducir un nombre de pelicula")
+	@Size(min = 3, message = "El nombre de pelicula debe tener como mínimo 3 caracteres")
 	@Column
 	private String nombrePelicula;
 	@Column
+	@NotBlank(message="Es obligatorio introducir una descripcion para la pelicula")
 	private String descripcion;
 	@Lob
 	@Column(name = "prod_imagen", columnDefinition = "LONGBLOB")

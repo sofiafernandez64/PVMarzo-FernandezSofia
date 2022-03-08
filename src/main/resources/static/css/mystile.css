@@ -1,3 +1,29 @@
+
+
+.form-check-label{
+		color:white;
+	
+	
+}
+.nombre{
+			color:white;
+	
+	
+}
+
+.modal-header{
+		background-color:#4682B4;		
+	
+}
+.modal-footer{
+			background-color:#4682B4;	
+	
+	
+}
+.modal-body{
+		background-color:#ADD8E6;	
+}
+
 table{
 	margin-left:250px;
 	margin-right:50px;
@@ -34,7 +60,7 @@ tr:hover td {
 	 
 	 
 .piepage{
-	margin-top:50px;
+	margin-top:80px;
 }
 
 .titulousu{

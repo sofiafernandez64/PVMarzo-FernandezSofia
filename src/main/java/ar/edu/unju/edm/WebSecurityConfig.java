@@ -47,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
+    public BCryptPasswordEncoder passwordEncoder() { /**********************************/
 		bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
         return bCryptPasswordEncoder;
     }

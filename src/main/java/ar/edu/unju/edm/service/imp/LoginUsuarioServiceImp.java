@@ -23,7 +23,7 @@ public class LoginUsuarioServiceImp implements UserDetailsService{
 	IUsuarioDAO usuarioDAO;
 
 	
-	@Override //va a buscar por el email, pero hay que parsear
+	@Override //va a buscar por el dni, pero hay que parsear
 	public UserDetails loadUserByUsername(String dni) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub  
      Usuario usuarioEncontrado = usuarioDAO.findByDni(Integer.parseInt(dni)).orElseThrow(()-> new UsernameNotFoundException("Usuario no existe en la BD"));

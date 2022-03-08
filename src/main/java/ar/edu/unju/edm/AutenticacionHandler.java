@@ -23,19 +23,19 @@ public class AutenticacionHandler implements AuthenticationSuccessHandler{
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		boolean tipoAdmin = false;
+		boolean tipoAdmin = false; 
 		boolean tipoCliente = false;
 		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 		for(GrantedAuthority  grantedAuthority : authorities) {
 			if(grantedAuthority.getAuthority().equals("Admin")) {
-				tipoAdmin = true;
+				tipoAdmin = true; //lo pone como verdadero y sale
 				break;
 			}else if (grantedAuthority.getAuthority().equals("Cliente")){
 				tipoCliente = true;
 				break;
 			}
 		}
-		if(tipoAdmin) {
+		if(tipoAdmin) { //si tippoAdmin es verdadero, la estrategia de redireccion lo va a mandar a la peticion /inicioadmi/mostrar
 			redirectStrategy.sendRedirect(request, response, "/inicioadmi/mostrar");
 		}else if(tipoCliente) {
 			redirectStrategy.sendRedirect(request, response, "/inicio/mostrar");
