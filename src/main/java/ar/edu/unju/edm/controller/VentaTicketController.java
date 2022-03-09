@@ -44,7 +44,7 @@ public class VentaTicketController {
 			peliculaSeleccionado = peliculaService.obtenerPeliculaCodigo(codPelicula);		
 			venta = ventasTicketService.crearVenta();
 			venta.setPelicula(peliculaSeleccionado);
-			model.addAttribute("venta",venta); //la variable venta se pasa al model con el nombre "venta"
+			model.addAttribute("venta",venta); //la variable venta se pasa al model con el nombre "venta", agrega a venta
 			model.addAttribute("usuarios", usuarioService.obtenerTodosUsuarios());
 		}
 		catch (Exception e) {
